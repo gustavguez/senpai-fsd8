@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <script>
+        //Pedir un número
+        const texto = prompt('Ingrese un texto');
+        
+        //Split texto
+        const textoArray = texto.split('');
+        
+        //Guardar resultados
+        let result = {};
+
+        for (const letra of textoArray) {
+            //Si la key no existe en result la creo
+            //y le pongo el valor 0
+            if(!result[letra]){
+                //Ejemplo result['a'] = 0;
+                result[letra] = 0;
+            }
+
+            //Sumo 1
+            result[letra] = result[letra] + 1;
+        }
+
+        console.log(result)
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <main>
+
+        <div class="container">
+            <h1 class="title">¿Qué tarea deseas recordar?</h1>
+            <form class="main-form js-task-form">
+                <input 
+                    type="text" 
+                    placeholder="Escribe lo que quieras">
+
+                <button>
+                    Agregar
+                </button>
+            </form>
+        </div>
+
+        <div class="container container-tasks">
+            <h2 class="subtitle">Listado de tareas</h2>
+
+            <ul class="task-list js-task-list"></ul>
+
+            <div class="task-clear">
+                <button>Borrar todo</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

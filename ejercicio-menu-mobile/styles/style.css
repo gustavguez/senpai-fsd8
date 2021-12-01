@@ -52,6 +52,16 @@ header button {
     display: flex;
 }
 
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: flex;
+    }
+    
+    header button {
+        display: none;
+    }
+}
+
 .mobile-menu ul {
     display: flex;
     list-style-type: none;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const tarea = {
+            completed: false,
+            description: 'Estudiar JSON'
+        };
+        console.log(tarea)
+        const tareaJSON = JSON.stringify(tarea);
+        console.log(tareaJSON);
+        const usuario = JSON.parse('[{"userId": 1,"id": 6,"title": "qui ullam ratione quibusdam voluptatem quia omnis","completed": false }]');
+        console.log(usuario)
+    </script>
+</body>
+</html>

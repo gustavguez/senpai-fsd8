@@ -1,39 +1,26 @@
-const montoElement = document.querySelector('.js-mont');
-montoElement.value = '100';
+//Selecciono el botón calcular
+const calcularBtn = document.querySelector('#calcular-btn');
 
-// //Funcion para solicitar un número
-// function solicitarMonto(){
-//     let monto = prompt('Ingrese el monto');
+//Selecciono el input de monto
+const inputMontoElement = document.querySelector('.js-monto');
 
-//     if (monto < 100){
-//         //Le asignamos a prepo 100
-//         monto = 100;
-//     }
-//     return monto;
-// }
+//Selecciono el input de monto
+const inputCuotasElement = document.querySelector('.js-cuotas');
 
-// //Solicito los números
-// const misMontos = [];
-// for (let contador = 0; contador < 2; contador++) {
-//     let monto = solicitarMonto();
+//Selecciono el <p> para mostrar el resultado
+const valorCuotaElement = document.querySelector('.js-valor-cuota');
 
-//     //Lo agrego al array
-//     misMontos.push(monto);
-// }
+//Agrego el escucha
+calcularBtn.addEventListener('click', function(){
+    //Obtener el valor del monto
+    const monto = inputMontoElement.value;
 
-// //Recorro mis montos
-// let total = 0;
-// for (const miMonto of misMontos) {
-//     total = total + parseInt(miMonto);
-// }
-// console.log(total);
+    //Obtener el valor de las cuotas
+    const cuotas = inputCuotasElement.value;
 
-// // const cuotas = 6;
-// // let resultado = null;
-
-// // console.log(monto1, monto2, monto3)
-
-// //Resultado
-// // resultado = monto1 / cuotas;
-
-
+    //Calcular monto cuota
+    const valorCuota = monto / cuotas;
+    
+    //Ponemos el resultado en el p
+    valorCuotaElement.textContent = '$U' + valorCuota;
+});

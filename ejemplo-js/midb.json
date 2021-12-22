@@ -1,0 +1,14 @@
+{
+    "tareas": [
+        {
+            "nombre": "senpai"
+        },
+        {
+            "nombre": "senpai2"
+        }
+    ],
+    "me": {
+        "nombre": "Senpai",
+        "apellido": "Academy"
+    }
+}

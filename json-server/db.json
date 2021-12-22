@@ -1,0 +1,11 @@
+{
+    "tareas": [
+        {
+            "id": 1,
+            "descripcion": "Estudiar JS"
+        }
+    ],
+    "info": {
+        "nombre": "Senpai"
+    }
+}

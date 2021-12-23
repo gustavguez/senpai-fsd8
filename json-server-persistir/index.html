@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+
+    <form id="form">
+        <input type="text" name="mensaje">
+        <input type="submit" value="OK">
+    </form>
+
+    <button id="listar">LISTAR CONTACTOS</button>
+
+    <script>
+        //SELECCCIONO LOS ELEMENTOS
+        const contactoForm = document.querySelector('#form');
+        const listarBtn = document.querySelector('#listar');
+
+        //Escucho el click
+        listarBtn.addEventListener('click', function(){
+            //Fetch al server falso
+            const contactoPromise  = fetch('http://localhost:3000/contactos', {
+                method: 'GET'
+            });
+            contactoPromise
+                //Si desean entenderlo luego les paso un link
+                .then((resp) => resp.json())
+                //Ya tengo el listado de tareas
+                .then(function(contactos){
+                    console.log(contactos)
+                });
+        });
+        
+        //Escuchar evento submit
+        contactoForm.addEventListener('submit', function(event){
+            //prevenir que el html recargue
+            event.preventDefault();
+            //Agarramos la info del form
+            const data = formDataToJSON(this);
+            
+            // //Post al server
+            fetch('http://localhost:3000/contactos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            return false;
+        });
+
+        
+
+
+        function formDataToJSON(FormElement){    
+            const formData = new FormData(FormElement);
+            const json = {};
+            for (const [key, value]  of formData.entries()) {
+                json[key] = value;
+            }
+            return json
+        }
+    </script>
+</body>
+</html>
